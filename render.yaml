@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: shop-django
+    env: python
+    buildCommand: "./manage.py migrate && ./manage.py collectstatic --noinput"
+    startCommand: "gunicorn shop.wsgi:application"
